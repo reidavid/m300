@@ -1,18 +1,20 @@
-# m300 – Plattformübergreifende Dienste in ein Netzwerk integrieren
+# Modul 300 – Plattformübergreifende Dienste in ein Netzwerk integrieren
 
-Lernender: David Martin Felicio Reichlin
-
+Lernender: David Martin Felicio Reichlin  
+Klasse: PE23e
+Lehrperson: Philipp Rohr
+Zeitraum: 40 Lektionen  
+Repository: https://github.com/reidavid/m300
 
 ---
 
 ## Übersicht
 
-Dieses Repository enthält alle Artefakte für das Modul-300-Projekt.  
-Ziel ist der Aufbau einer vollständigen CI/CD-Pipeline mit automatisiertem  
-Deployment auf einem Kubernetes-Cluster (k3s).
+Dieses Repository enthält alle Artefakte für das Modul-300-Projekt.Ziel ist der Aufbau einer vollständigen
+CI/CD-Pipeline mit automatisiertemDeployment auf einem Kubernetes-Cluster (k3s).
 
 Da der Fokus auf der CI/CD-Pipeline und dem Kubernetes-Cluster liegt, ist eine simple app enthalten, die mit python und
-flask aufgebaut ist und redis und sqlite verwendet.
+flask aufgebaut ist und redis verwendet
 
 **Tech-Stack:**
 
@@ -127,8 +129,8 @@ Jede Arbeitsphase enthält: Datum, geleistete Arbeit, Probleme und Lösungen und
 
 ## Projektanforderungen
 
-Die vollständigen Projektanforderungen (Auftrag, Lieferobjekte, Bewertungsraster)  
-sind unter [`docs/projektanforderungen.md`](docs/projektanforderungen.md) zu finden.
+Die vollständigen Projektanforderungen (Auftrag, Lieferobjekte, Bewertungsraster) sind unter [
+`docs/projektanforderungen.md`](docs/projektanforderungen.md) zu finden.
 
 ---
 
