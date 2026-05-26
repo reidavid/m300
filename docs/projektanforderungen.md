@@ -34,16 +34,16 @@ Eine Github Actions CI/CD-Pipeline baut automatisch ein neues Docker-Image und d
 
 ## 3. Technologien
 
-| Technologie               | Zweck                                           |
-|---------------------------|-------------------------------------------------|
-| Python / Flask            | Webapplikation (URL Shortener API)              |
-| Redis                     | Datenspeicher für URL-Mappings                  |
-| Docker                    | Containerisierung der Flask-App                 |
-| GitLab CI/CD              | Automatische Pipeline (Build, Test, Deploy)     |
-| GitLab Container Registry | Speicherung der Docker-Images                   |
-| k3s                       | Lokaler Kubernetes-Cluster                      |
-| kubectl                   | Verwaltung des Clusters                         |
-| Kubernetes Manifeste      | Deployment, Service, Ingress, ConfigMap, Secret |
+| Technologie          | Zweck                                           |
+|----------------------|-------------------------------------------------|
+| Python / Flask       | Webapplikation (URL Shortener API)              |
+| Redis                | Datenspeicher für URL-Mappings                  |
+| Docker               | Containerisierung der Flask-App                 |
+| Github Actions       | Automatische Pipeline (Build, Test, Deploy)     |
+| GHCR                 | Speicherung der Docker-Images                   |
+| k3s                  | Lokaler Kubernetes-Cluster                      |
+| kubectl              | Verwaltung des Clusters                         |
+| Kubernetes Manifeste | Deployment, Service, Ingress, ConfigMap, Secret |
 
 ---
 
@@ -79,12 +79,12 @@ graph TD
 | `/<code>`  | GET     | Leitet zur hinterlegten Original-URL weiter         |
 | `/health`  | GET     | Antwort: `{"status": "ok"}` - für K8s Health Checks |
 
-### 5.2 Pipeline (GitLab CI/CD)
+### 5.2 Pipeline (Github CI/CD)
 
 | Stage    | Was passiert                                     |
 |----------|--------------------------------------------------|
 | `test`   | Automatisierte Tests mit pytest                  |
-| `build`  | Docker-Image bauen und in GitLab Registry pushen |
+| `build`  | Docker-Image bauen und in Github Registry pushen |
 | `deploy` | `kubectl apply` auf den k3s-Cluster              |
 
 Trigger bei jedem Push auf `main`
@@ -97,7 +97,7 @@ Trigger bei jedem Push auf `main`
 |-------------------|-----------|----------------------------------------------------------------------------------------|
 | Planung           | 1–6       | Projektstruktur, Git-Repo aufsetzen, Konzept schreiben, Technologien installieren      |
 | Containerisierung | 7–14      | Flask-App entwickeln, Dockerfile, docker-compose, lokale Tests                         |
-| CI/CD-Pipeline    | 15–22     | `.gitlab-ci.yml` aufbauen, Tests automatisieren, Image in Registry pushen              |
+| CI/CD-Pipeline    | 15–22     | `ci-cd.yml` aufbauen, Tests automatisieren, Image in Registry pushen                   |
 | Kubernetes        | 23–32     | k3s aufsetzen, Manifeste schreiben, App deployen, Health Checks, Rolling Update testen |
 | Abschluss         | 33–40     | Dokumentation fertigstellen, Reflexion                                                 |
 
@@ -108,13 +108,9 @@ gantt
 
     Projektstruktur und Konzept   :a1, 22.05.2025, 14d
     Flask App und Dockerfile      :a2, 05.06.2025, 14d
-    GitHub Actions Pipeline     :a3, 19.06.2025, 14d
+    GitHub Actions Pipeline       :a3, 19.06.2025, 14d
     k3s Setup und Manifeste       :a4, 03.07.2025, 7d
     Doku und Präsentation         :a5, 10.07.2025, 7d
 ```
 
 *Modul 300 - Plattformübergreifende Dienste in ein Netzwerk integrieren | Technische Berufsschule Zürich*
-
-
-Datum - 2026
-Thema
